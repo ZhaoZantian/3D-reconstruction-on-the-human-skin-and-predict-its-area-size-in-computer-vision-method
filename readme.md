@@ -34,6 +34,6 @@ D:\src\vcpkg\installed\x64-windows\tools\openmvs\TextureMesh.exe mvs\scene_dense
 D:\src\vcpkg\installed\x64-windows\tools\openmvs\Viewer.exe mvs\scene_dense_mesh_texture.mvs
 pause
 ```
-# ![MeshLab Logo](meshlab.png) MeshLab
+# ![MeshLab Logo](eye64.png) MeshLab
 
 [![BuildMeshLab](https://github.com/cnr-isti-vclab/meshlab/actions/workflows/BuildMeshLab.yml/badge.svg)](https://github.com/cnr-isti-vclab/meshlab/actions/workflows/BuildMeshLab.yml)
