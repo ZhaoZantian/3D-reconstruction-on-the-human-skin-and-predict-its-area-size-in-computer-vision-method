@@ -1,0 +1,15 @@
+mkdir .\matches
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_SfMInit_ImageListing.exe -i .\images\ -d D:\src\vcpkg\installed\x64-windows\tools\openmvg\sensor_width_camera_database.txt -o .\matches -k "15147.921; 0.0; 2375.50000; 0.0; 15152.317; 1583.50000; 0.0; 0.0; 1.0" -g 1
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_ComputeFeatures.exe -i .\matches\sfm_data.json -o .\matches
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_PairGenerator.exe -i .\matches\sfm_data.json -o .\matches\pairs.bin
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_ComputeMatches.exe -i .\matches\sfm_data.json -p .\matches\pairs.bin -o .\matches\matches.putative.bin
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_GeometricFilter.exe -i .\matches\sfm_data.json -m .\matches\matches.putative.bin -g f -o .\matches\matches.f.bin
+mkdir .\output
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_SfM.exe -s INCREMENTAL -i .\matches\sfm_data.json -M .\matches\matches.f.bin -o .\output
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_ComputeSfM_DataColor.exe -i .\output\sfm_data.bin -o .\output\sfm_data_colorized.ply
+mkdir .\mvs
+D:\src\vcpkg\installed\x64-windows\tools\openmvg\openMVG_main_openMVG2openMVS.exe -i .\output\sfm_data.bin -d .\mvs\undistortedImages -o .\mvs\scene.mvs
+
+pause
+
+

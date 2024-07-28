@@ -1,0 +1,5 @@
+D:\src\vcpkg\installed\x64-windows\tools\openmvs\DensifyPointCloud.exe mvs\scene.mvs --archive-type 1 --estimate-colors 1
+D:\src\vcpkg\installed\x64-windows\tools\openmvs\ReconstructMesh.exe mvs\scene_dense.mvs
+D:\src\vcpkg\installed\x64-windows\tools\openmvs\TextureMesh.exe mvs\scene_dense_mesh.mvs
+D:\src\vcpkg\installed\x64-windows\tools\openmvs\Viewer.exe mvs\scene_dense_mesh_texture.mvs
+pause
